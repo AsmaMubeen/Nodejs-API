@@ -421,7 +421,7 @@ db.getCollection("Whole_Rec").aggregate([
         _id: {"CancellationDate"  : "$CancellationDate"},
         
         count: { $sum : 1 },
-        seats: {$sum : "$No_Of_Seats"},
+        seats: {$sum : "$CancelledSeats"},
         CancellationAmount: {$sum : "$CancellationAmount"}
                   
       }},
@@ -441,7 +441,7 @@ db.getCollection("Whole_Rec").aggregate([
         _id: {"APISource":"$APISource","CancellationDate"  : "$CancellationDate"},
         
         count: { $sum : 1 },
-        seats: {$sum : "$No_Of_Seats"},
+        seats: {$sum : "$CancelledSeats"},
         CancellationAmount: {$sum : "$CancellationAmount"}
                   
       }},
@@ -461,7 +461,7 @@ db.getCollection("Whole_Rec").aggregate([
         _id: {"Mobile":"$Mobile","CancellationDate"  : "$CancellationDate"},
         
         count: { $sum : 1 },
-        seats: {$sum : "$No_Of_Seats"},
+        seats: {$sum : "$CancelledSeats"},
         CancellationAmount: {$sum : "$CancellationAmount"}
                   
       }},
@@ -482,7 +482,7 @@ db.getCollection("Whole_Rec").aggregate([
         _id: {"BookingPlatform":"$BookingPlatform","CancellationDate"  : "$CancellationDate"},
         
         count: { $sum : 1 },
-        seats: {$sum : "$No_Of_Seats"},
+        seats: {$sum : "$CancelledSeats"},
         CancellationAmount: {$sum : "$CancellationAmount"}
                   
       }},
@@ -502,7 +502,7 @@ db.getCollection("Whole_Rec").aggregate([
       $group:{
         _id:{"OperatorName":"$OperatorName","Source":"$Source","Destination":"$Destination","CancellationDate":"$CancellationDate"},
         count: { $sum : 1 },
-        seats: {$sum : "$No_Of_Seats"},
+        seats: {$sum : "$CancelledSeats"},
         CancellationAmount: {$sum : "$CancellationAmount"}
                   
       }},
